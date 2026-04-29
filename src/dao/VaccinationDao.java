@@ -20,6 +20,7 @@ public class VaccinationDao {
         //create session
         Session ss = HibernateUtil.getSessionFactory().openSession();
         Transaction tr = ss.beginTransaction();
+        
         ss.save(vaccination);
         tr.commit();
         ss.close();
@@ -55,13 +56,5 @@ public class VaccinationDao {
         return vaccinationsList;
     } 
     
-    // READ A CITIZEN BY ID
-    public Vaccination getCitizenById(Vaccination vaccination){
-        Session ss = HibernateUtil.getSessionFactory().openSession();
-        Vaccination vac = (Vaccination)ss.get(Vaccination.class, vaccination.getCitizen_fk());
-        ss.close();
-        return vac;
-        
-    }
     
 }

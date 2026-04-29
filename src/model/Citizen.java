@@ -18,6 +18,8 @@ public class Citizen {
     @Column(name = "full_names")
     private String fullnames;
     private String phone_Number;
+    @Column(name= "is_vaccinated")
+    private boolean isVaccinated;
 
     public Citizen() {
     }
@@ -32,6 +34,14 @@ public class Citizen {
         this.phone_Number = phone_Number;
     }
 
+    public boolean isIsVaccinated() {
+        return isVaccinated;
+    }
+
+    public void setIsVaccinated(boolean isVaccinated) {
+        this.isVaccinated = isVaccinated;
+    }
+    
     public String getCitizen_id() {
         return citizen_id;
     }
