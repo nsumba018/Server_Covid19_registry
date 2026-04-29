@@ -16,11 +16,10 @@ import org.hibernate.*;
  */
 public class VaccinationDao {
     //CREATE Operation
-    public String regiserVaccination(Vaccination vaccination){
+    public String registerVaccination(Vaccination vaccination){
         //create session
         Session ss = HibernateUtil.getSessionFactory().openSession();
         Transaction tr = ss.beginTransaction();
-        
         ss.save(vaccination);
         tr.commit();
         ss.close();
@@ -28,7 +27,7 @@ public class VaccinationDao {
     }
     
     //UPDATE Operation
-    public String updateTransaction(Vaccination vaccination){
+    public String updateVaccination(Vaccination vaccination){
         Session ss = HibernateUtil.getSessionFactory().openSession();
         Transaction tr = ss.beginTransaction();
         ss.update(vaccination);
@@ -38,7 +37,7 @@ public class VaccinationDao {
     }
     
     //DELETE Operation
-    public String deleteOperation(Vaccination vaccination){
+    public String deleteVaccination(Vaccination vaccination){
         Session ss = HibernateUtil.getSessionFactory().openSession();
         Transaction tr = ss.beginTransaction();
         ss.update(vaccination);
@@ -49,7 +48,7 @@ public class VaccinationDao {
     }
     
     // READ ALL OPERATION
-    List<Vaccination> getAllVaccination(){
+    public List<Vaccination> getAllVaccination(){
         Session ss = HibernateUtil.getSessionFactory().openSession();
         List<Vaccination> vaccinationsList = ss.createQuery("select vac from Vaccination vac").list();
         ss.close();
