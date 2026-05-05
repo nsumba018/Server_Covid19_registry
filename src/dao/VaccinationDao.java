@@ -55,5 +55,11 @@ public class VaccinationDao {
         return vaccinationsList;
     } 
     
+    //READ VACCINATION BY ID
+    public Vaccination getVaccinatedById(Vaccination vaccination){
+        Session ss = HibernateUtil.getSessionFactory().openSession();
+        Vaccination vac = (Vaccination)ss.get(Vaccination.class, vaccination.getId());
+        return vac;
+    }
     
 }

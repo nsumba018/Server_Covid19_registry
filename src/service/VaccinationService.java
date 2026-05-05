@@ -18,7 +18,7 @@ public interface VaccinationService extends Remote{
     public String vaccineRegister(Vaccination vac) throws RemoteException;
     public String vaccineUpdate(Vaccination vac) throws RemoteException;
     public String vaccineDelete(Vaccination vac) throws RemoteException;
-    public List<Vaccination> getAllVaccinedRecords() throws RemoteException;
+    public List<Vaccination> getVaccinatedRecord() throws RemoteException;
     public Vaccination getVaccinedCitizenById(Vaccination vac) throws RemoteException;
     
 }

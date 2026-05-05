@@ -7,6 +7,7 @@ package service.implementation;
 
 import dao.CitizenDao;
 import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
 import model.Citizen;
 import service.CitizenService;
@@ -15,7 +16,12 @@ import service.CitizenService;
  *
  * @author nsumba
  */
-public class CitizenImpl implements CitizenService{
+public class CitizenImpl extends UnicastRemoteObject implements CitizenService{
+    
+    public CitizenImpl() throws RemoteException{
+    super();
+}
+    
     CitizenDao dao = new CitizenDao();
 
     @Override

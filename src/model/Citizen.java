@@ -5,6 +5,7 @@
  */
 package model;
 
+import java.io.Serializable;
 import javax.persistence.*;
 
 /**
@@ -12,14 +13,13 @@ import javax.persistence.*;
  * @author nsumba
  */
 @Entity
-public class Citizen {
+public class Citizen implements Serializable{
     @Id
     private String citizen_id;
     @Column(name = "full_names")
     private String fullnames;
     private String phone_Number;
-    @Column(name= "is_vaccinated")
-    private boolean isVaccinated;
+    private boolean is_vaccinated;
 
     public Citizen() {
     }
@@ -34,13 +34,15 @@ public class Citizen {
         this.phone_Number = phone_Number;
     }
 
-    public boolean isIsVaccinated() {
-        return isVaccinated;
+    public boolean isIs_vaccinated() {
+        return is_vaccinated;
     }
 
-    public void setIsVaccinated(boolean isVaccinated) {
-        this.isVaccinated = isVaccinated;
+    public void setIs_vaccinated(boolean is_vaccinated) {
+        this.is_vaccinated = is_vaccinated;
     }
+
+    
     
     public String getCitizen_id() {
         return citizen_id;

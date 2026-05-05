@@ -21,7 +21,6 @@ public class CitizenDao {
         Session ss = HibernateUtil.getSessionFactory().openSession();
         // create a transaction
         Transaction tr = ss.beginTransaction();
-        citizen.setIsVaccinated(false);
         ss.save(citizen);
         tr.commit();
         ss.close();
