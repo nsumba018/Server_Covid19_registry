@@ -7,6 +7,7 @@ package service.implementation;
 
 import dao.VaccinationDao;
 import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
 import model.Vaccination;
 import service.VaccinationService;
@@ -15,7 +16,12 @@ import service.VaccinationService;
  *
  * @author nsumba
  */
-public class VaccineImpl implements VaccinationService{
+public class VaccineImpl extends UnicastRemoteObject implements VaccinationService{
+    
+    public VaccineImpl() throws RemoteException{
+        super();
+    }
+    
     public VaccinationDao dao = new VaccinationDao();
     
 
